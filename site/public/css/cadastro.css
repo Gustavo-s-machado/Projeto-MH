@@ -1,0 +1,44 @@
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.card .elementos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    background-color: black;
+}
+
+.card .elementos div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .elementos input{
+    border-radius: 25px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.card .elementos button{
+    background-color: black;
+    color: white;
+    border: 1px white solid;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 5px;
+    transition: 0.5s;
+}
+
+.card .elementos button:hover{
+    background-color: white;
+    color: black;
+}
