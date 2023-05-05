@@ -1,0 +1,127 @@
+body{
+    margin: 0;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* header */
+
+.header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+
+.header .navbar{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .navbar .logo{
+    display: flex;
+    align-items: center;
+    margin-left: 3vw;
+}
+
+.logo img{
+    width: 10%;
+    cursor: pointer;
+}
+
+.header .navbar .lista{
+    width: 25%;
+    margin-right: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .navbar .lista a{
+    text-decoration: none;
+    color: white;
+}
+
+.header .navbar .lista button{
+    background-color: rgba(255, 0, 0, 0);
+    color: white;
+    width: 6vw;
+    height: 4vh;
+    border: 1px white solid;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.header .navbar .lista button:hover{
+
+    /* transform: scale(1.1); */
+    background-color: white;
+    color: black;
+}
+
+/* bem vindo */
+
+.bemVindo {
+    display: flex;
+}
+
+.bemVindo div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.bemVindo div h1{
+    color: white;
+}
+
+.bemVindo div img{
+    width: 100%;
+}
+
+/* sobre nos */
+
+.sobre {
+    display: flex;
+}
+
+.sobre div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sobre div h1{
+    color: white;
+}
+
+.sobre div img {
+    width: 100%;
+}
+
+/* tema */
+
+.tema {
+    display: flex;
+}
+
+.tema div{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tema div h1{
+    color: white;
+}
+
+.tema div img {
+    width: 100%;
+}
