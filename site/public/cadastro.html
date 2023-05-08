@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="js/funcoes.js">
 </head>
 <body>
     <div class="card">
@@ -18,7 +19,7 @@
     
             </div>
             <div>
-                <button>cadastrar</button>
+                <button onclick="cadastrar()">cadastrar</button>
                 <a href="login.html">Já possui uma conta?</a>
             </div>
         </div>
@@ -28,7 +29,6 @@
 
 <script>
         function cadastrar() {
-        aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
