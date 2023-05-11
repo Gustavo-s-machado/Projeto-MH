@@ -27,7 +27,7 @@
 
         <div>
             <h1>Bem vindo(a)!!</h1>
-            
+
         </div>
 
         <div>
@@ -56,12 +56,53 @@
             <img src="assets/background/fatalis.png" alt="">
         </div>
     </div>
+    <div class="carrossel">
+
+        <button class="bt1" onclick="voltar()"><</button>
+                <button class="bt2" onclick="passar()">></button>
+
+                <div class="container" id="div_carrossel">
+                    <img src="assets/imgs/print1.jpeg" id="img2" />
+                    <img src="assets/imgs/print2.webp" id="img3" />
+                </div>
+    </div>
 </body>
 
 </html>
 
 <script>
-    function cadastro(){
-        window.location.href="cadastro.html";
+    var posicao = 0;
+    var imagens = [
+        "assets/imgs/print1.jpeg",
+        "assets/imgs/print2.webp",
+        "assets/imgs/print3.webp"
+    ];
+
+    function passar() {
+        posicao++
+        if(posicao == imagens.length){
+            div_carrossel.innerHTML = `
+                <img src="${imagens[posicao - 1]}" id="img1" />
+                <img src="${imagens[posicao]}" id="img2" />
+            `
+        }else if (posicao < imagens.length) {
+            div_carrossel.innerHTML = `
+                <img src="${imagens[posicao - 1]}" id="img1" />
+                <img src="${imagens[posicao]}" id="img2" />
+                <img src="${imagens[posicao + 1]}" id="img3" />
+            `
+        }else {
+            posicao = 0;
+            div_carrossel.innerHTML = `
+                <img src="${imagens[posicao]}" id="img2" />
+                <img src="${imagens[posicao + 1]}" id="img3" />
+            `
+
+        }
+
+    }
+
+    function cadastro() {
+        window.location.href = "cadastro.html";
     }
 </script>

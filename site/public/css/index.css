@@ -125,3 +125,40 @@ body{
 .tema div img {
     width: 100%;
 }
+
+/* carrossel */
+
+.carrossel{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.carrossel .bt1{
+    margin-left: 3%;
+}
+
+.carrossel .bt2{
+    margin-left: 95%;
+}
+
+.carrossel button{
+    cursor: pointer;
+    position: absolute;
+}
+
+.carrossel .container {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.carrossel .container #img2{
+    width: 40%;
+}
+
+.carrossel .container img{
+    width: 28%;
+    transition: 0.5s;
+}
