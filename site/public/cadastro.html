@@ -72,11 +72,8 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
 
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
+                window.location = "login.html";                
 
                 limparFormulario();
                 finalizarAguardar();

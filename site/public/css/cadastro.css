@@ -63,12 +63,15 @@ body{
 }
 
 .card .elementos button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0);
     color: white;
     font-weight: 500;
     width: 5vw;
     height: 4vh;
-    font-size: 1.5vh;
+    font-size: 1.8vh;
     border: 0.3vh white solid;
     margin-top: 2vh;
     margin-bottom: 2vh;

@@ -1,3 +1,13 @@
+@font-face {
+    font-family: mh1;
+    src: url(../assets/font/MonsterHunter.ttf);
+}
+
+@font-face {
+    font-family: mh2;
+    src: url(../assets/font/Quest_Clear.ttf);
+}
+
 body{
     margin: 0;
     background-color: black;
