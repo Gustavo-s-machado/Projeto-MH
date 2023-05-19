@@ -12,29 +12,34 @@
 </head>
 
 <body onload="validarSessao(), atualizacaoPeriodica()">
+    <div class="box">
 
+        <div class="options" id="div_op">
+            <div id="div_usuario">
+                
+            </div>
+        </div>
+    </div>
 
     <div class="header">
         <div class="navbar"> 
             <div>
                 <img src="../assets/pngegg.png" class="logo">
             </div>
-            <div>
+            <div class="lista">
                 <a href="">Monstros</a>
                 <a href="">Noticias</a>
                 <a href="">itens</a>
             </div>
-            <div>
-                <button>
-                    ...
-                </button>
+            <div class="profile">
+                <a onclick="exibir()" >
+                    <img src="../assets/profile/palico1.png" >
+                </a>
             </div>
         </div>
     </div>
 
-<!-- 
-
-        <div class="header-left dash-header">
+<!-- <div class="header-left dash-header">
 
             <h1>AquaTech</h1>
 
@@ -66,7 +71,23 @@
         
 <script>
     
+    function exibir(){
+        div_usuario.innerHTML =` 
+        <button onclick="fechar()">X</button>
+        <div>
+        <p id="nome_usuario">${sessionStorage.NOME_USUARIO}</p>
+        <img src="../assets/profile/palico1.png" alt="">
+        </div>
+        `   
 
+        div_op.style.width="30%"
+    }
+
+    function fechar(){
+        div_op.style.width="0%"
+        div_usuario.innerHTML = ""
+    }
 </script>
+
 
 </html>
