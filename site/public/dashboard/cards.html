@@ -38,6 +38,10 @@
             </div>
         </div>
     </div>
+    
+    <div class="carrossel" id="carrossel">
+        <img src="../assets/background/mhw1.jpg" alt="">
+    </div>
 
 <!-- <div class="header-left dash-header">
 
@@ -70,6 +74,33 @@
 
         
 <script>
+    
+    var posicao = 0;
+
+    var imagens = [
+    "../assets/background/mhw1.jpg",
+    "../assets/background/mhw2.jpg",
+    "../assets/background/mhw3.jpg"
+    ];
+
+
+
+    setInterval(
+        function passar() {
+        posicao++
+        if(posicao <= imagens.length - 1){
+
+            carrossel.innerHTML=`<img src="${imagens[posicao]}" alt="">`
+            
+        }else if(posicao > imagens.length - 1){
+            posicao = 0;
+            carrossel.innerHTML=`<img src="${imagens[posicao]}" alt="">`
+
+        }
+    }
+        ,
+        3000
+    )
     
     function exibir(){
         div_usuario.innerHTML =` 
