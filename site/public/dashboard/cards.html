@@ -14,9 +14,12 @@
 <body onload="validarSessao(), atualizacaoPeriodica()">
     <div class="box">
 
-        <div class="options" id="div_op">
+        <div class="menu" id="div_menu">
             <div id="div_usuario">
                 
+            </div>
+            <div id="div_options">
+
             </div>
         </div>
     </div>
@@ -41,6 +44,53 @@
     
     <div class="carrossel" id="carrossel">
         <img src="../assets/background/mhw1.jpg" alt="">
+    </div>
+    <div class="navegation">
+        <div>
+            <h1>opções</h1>
+        </div>
+        <div>
+            <button>Monstros</button>
+            <button>noticias</button>
+            <button>itens</button>
+        </div>
+    </div>
+
+    <div class="vote">
+        <div>
+            <h1>qual seu dragão ancião favorito?</h1>
+        </div>
+
+        <div class="options">
+            <div>
+                <div>
+                    <img src="../assets/elder dragons/teostra img.jpg">
+                    <p>Teostra</p>
+                </div>
+                <div>
+                    <img src="../assets/elder dragons/kirin img.webp">
+                    <p>kirin</p>
+                </div>
+                <div>
+                    <img src="../assets/elder dragons/kushala daora.jpg">
+                    <p>Kushala Daora</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="../assets/elder dragons/Vaal Hazak img.jpg">
+                    <p>Vaal Hazak</p>
+                </div>
+                <div>
+                    <img src="../assets/elder dragons/Velkhana img.webp">
+                    <p>Velkhana</p>
+                </div>
+                <div>
+                    <img src="../assets/elder dragons/Shara Ishvalda img.jpg">
+                    <p>Shara Ishvalda</p>
+                </div>
+            </div>
+        </div>
     </div>
 
 <!-- <div class="header-left dash-header">
@@ -67,9 +117,7 @@
                 </a>
             </div> -->
 
-<!-- <div class="btn-logout" onclick="limparSessao()">
-            <h3>Sair</h3>
-    </div> -->
+
 
 
         
@@ -85,22 +133,22 @@
 
 
 
-    setInterval(
-        function passar() {
-        posicao++
-        if(posicao <= imagens.length - 1){
+    // setInterval(
+    //     function passar() {
+    //     posicao++
+    //     if(posicao <= imagens.length - 1){
 
-            carrossel.innerHTML=`<img src="${imagens[posicao]}" alt="">`
+    //         carrossel.innerHTML=`<img src="${imagens[posicao]}" alt="">`
             
-        }else if(posicao > imagens.length - 1){
-            posicao = 0;
-            carrossel.innerHTML=`<img src="${imagens[posicao]}" alt="">`
+    //     }else if(posicao > imagens.length - 1){
+    //         posicao = 0;
+    //         carrossel.innerHTML=`<img src="${imagens[posicao]}" alt="">`
 
-        }
-    }
-        ,
-        3000
-    )
+    //     }
+    // }
+    //     ,
+    //     3000
+    // )
     
     function exibir(){
         div_usuario.innerHTML =` 
@@ -110,13 +158,19 @@
         <img src="../assets/profile/palico1.png" alt="">
         </div>
         `   
+        div_options.innerHTML=`
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+        `
 
-        div_op.style.width="30%"
+        div_menu.style.width="30%"
     }
 
     function fechar(){
-        div_op.style.width="0%"
+        div_menu.style.width="0%"
         div_usuario.innerHTML = ""
+        div_options.innerHTML=""
     }
 </script>
 

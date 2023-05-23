@@ -5,6 +5,7 @@ body{
     color: white;
 }
 .box{
+    z-index: 3;
     display: flex;
     width: 100%;
     justify-content: flex-end;
@@ -12,8 +13,9 @@ body{
     position: fixed;
 }
 
-.box .options{
+.box .menu{
     display: flex;
+    flex-direction: column;
     width: 0%;
     position: absolute;
     position: fixed;
@@ -22,7 +24,7 @@ body{
     transition: 0.5s;
 }
 
-.box .options #div_usuario{
+.box .menu #div_usuario{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,19 +33,19 @@ body{
     height: 10%;
 }
 
-.box .options #div_usuario div{
+.box .menu #div_usuario div{
     display: flex;
     justify-content: space-between;
     width: 30%;
 }
 
-.box .options #div_usuario img{
+.box .menu #div_usuario img{
     border-radius: 100%;
     width: 4vw;
     height: 4vw;
 }
 
-.box .options #div_usuario button{
+.box .menu #div_usuario button{
     cursor: pointer;
     color: white;
     background-color: transparent;
@@ -53,6 +55,25 @@ body{
     width: 3vw;
     height: 3vw;
 }
+
+.box .menu #div_options{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100vh;
+}
+
+.box .menu #div_options .btn-logout{
+    display: flex;
+    background-color: rgb(48, 48, 48);
+    justify-content: flex-end;
+    padding-right: 3vh;
+    cursor: pointer;
+}
+
+
+
+/* header e navbar */
 
 .header {
     width: 100%;
@@ -110,3 +131,70 @@ body{
     height: 100%;
     transition: 1.5s;
 }
+
+/* navegation */
+
+.navegation {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.navegation div{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* votação */
+
+
+.vote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.vote div{
+    display: flex;
+    justify-content: center;
+}
+
+.vote .options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vote .options div{
+    width: 100% ;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5vh;
+}
+
+
+
+.vote .options img{
+    border-radius: 2vw;
+    z-index: 2;
+    width: 85%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.vote .options img:hover{
+    filter: blur(8px);
+    z-index: 0;
+    transition: 0.5s;
+}
+
+.vote .options p{
+    position: absolute;
+    z-index: 1;
+    color: rgba(255, 255, 255);
+}
+
+
+
