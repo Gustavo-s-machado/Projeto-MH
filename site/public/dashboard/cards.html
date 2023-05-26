@@ -156,10 +156,13 @@
         <button onclick="fechar()">X</button>
         <div>
         <p id="nome_usuario">${sessionStorage.NOME_USUARIO}</p>
-        <img src="../assets/profile/palico1.png" alt="">
+        <img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" alt="">
         </div>
         `   
         div_options.innerHTML=`
+            <div>
+                
+            </div>
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
