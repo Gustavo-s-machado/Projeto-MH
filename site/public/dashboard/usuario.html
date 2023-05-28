@@ -7,6 +7,33 @@
     <title>Usuario</title>
 </head>
 <body>
-    
+    <div>
+        <a href="cards.html"><</a>
+    </div>
+    <div>
+        <div id="usu_img">
+
+        </div>
+        <div id="div_nome">
+            
+        </div>
+    </div>
+    <div>
+        <div>
+            <h1>Mudar nome</h1>
+            <input name="" id="inp_nome">
+        </div>
+        <div>
+            <h1>escolha a nova foto de perfil:</h1>
+            
+        </div>
+    </div>
 </body>
 </html>
+
+<script>
+    usu_img.innerHTML=`<img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" >`;
+    div_nome.innerHTML=`<h2>${sessionStorage.NOME_USUARIO}</h2>`;
+    inp_nome.innerHTML=`<h2>${sessionStorage.NOME_USUARIO}</h2>`;
+    
+</script>
