@@ -21,19 +21,29 @@
     <div>
         <div>
             <h1>Mudar nome</h1>
-            <input name="" id="inp_nome">
+            <input id="inp_nome">
         </div>
         <div>
             <h1>escolha a nova foto de perfil:</h1>
-            
+            <div>
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+                <input type="text">
+
+            </div>
         </div>
     </div>
 </body>
 </html>
 
 <script>
+
+    var nova_foto = "";
+
     usu_img.innerHTML=`<img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" >`;
     div_nome.innerHTML=`<h2>${sessionStorage.NOME_USUARIO}</h2>`;
-    inp_nome.innerHTML=`<h2>${sessionStorage.NOME_USUARIO}</h2>`;
+    inp_nome.value=`${sessionStorage.NOME_USUARIO}`;
     
 </script>
