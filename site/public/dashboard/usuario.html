@@ -26,13 +26,26 @@
         <div>
             <h1>escolha a nova foto de perfil:</h1>
             <div>
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
+                <a onclick="atualizar(1)">
+                    <img src="../assets/profile/palico1.png" >
+                </a>
+                <a onclick="atualizar(2)">
+                    <img src="../assets/profile/palico2.png" >
+                </a>
+                <a onclick="atualizar(3)">
+                    <img src="../assets/profile/palico3.png" >
+                </a>
+                <a onclick="atualizar(4)">
+                    <img src="../assets/profile/palico4.png" >
+                </a>
+                <a onclick="atualizar(5)">
+                    <img src="../assets/profile/palico5.png" >
+                </a>
 
             </div>
+        </div>
+        <div>
+            <button onclick="enviar()">Atualizar Alterações</button>
         </div>
     </div>
 </body>
@@ -40,10 +53,40 @@
 
 <script>
 
-    var nova_foto = "";
-
     usu_img.innerHTML=`<img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" >`;
     div_nome.innerHTML=`<h2>${sessionStorage.NOME_USUARIO}</h2>`;
     inp_nome.value=`${sessionStorage.NOME_USUARIO}`;
+    var idUsu = sessionStorage.ID_USUARIO;
+    var nova_foto = sessionStorage.IMG_USUARIO;
+
+    function atualizar(foto){
+        nova_foto = `palico${foto}`
+        sessionStorage.IMG_USUARIO = `palico${foto}`
+    }
+
+    function enviar() {
+        fetch(`/avisos/atualizar/${sessionStorage.getItem("ID_USUARIO")}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                foto: nova_foto,
+                nome: inp_nome.value
+            })
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a modança! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
     
 </script>
