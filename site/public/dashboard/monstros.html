@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monstros</title>
+    <link rel="stylesheet" href="../css/monstros.css">
+</head>
+
+<body>
+    <div class="box">
+
+        <div class="menu" id="div_menu">
+            <div id="div_usuario">
+
+            </div>
+            <div id="div_options">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="navbar">
+            <div>
+                <img src="../assets/pngegg.png" class="logo">
+            </div>
+            <div class="lista">
+                <a href="">Monstros</a>
+                <a href="">Noticias</a>
+                <a href="mural.html">Comunidade</a>
+            </div>
+            <div class="profile">
+                <a onclick="exibir()" id="a_profile">
+
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h1>Dragões Anciões</h1>
+            <div>
+                <a href="">a</a>
+                <a href="">a</a>
+                <a href="">a</a>
+                <a href="">a</a>
+                <a href="">a</a>
+                <a href="">a</a>
+            </div>
+            <div>
+                <h1>Monstros Comuns</h1>
+                <div>
+                    <a href="">a</a>
+                    <a href="">a</a>
+                    <a href="">a</a>
+                    <a href="">a</a>
+                    <a href="">a</a>
+                    <a href="">a</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    a_profile.innerHTML = `<img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" >`
+
+    function exibir() {
+        div_usuario.innerHTML = ` 
+        <button onclick="fechar()">X</button>
+        <div>
+        <p id="nome_usuario">${sessionStorage.NOME_USUARIO}</p>
+        <img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" alt="">
+        </div>
+        `
+        div_options.innerHTML = `
+            <div>
+                <div>
+                    <a href="usuario.html">
+                        configurações do Perfil
+                    </a>
+                </div>
+            </div>
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+        `
+
+        div_menu.style.width = "30%"
+    }
+
+    function fechar() {
+        div_menu.style.width = "0%"
+        div_usuario.innerHTML = ""
+        div_options.innerHTML = ""
+    }
+</script>

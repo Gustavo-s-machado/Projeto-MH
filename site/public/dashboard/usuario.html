@@ -1,70 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuario</title>
+    <link rel="stylesheet" href="../css/usuario.css">
 </head>
-<body>
-    <div>
-        <a href="cards.html"><</a>
-    </div>
-    <div>
-        <div id="usu_img">
 
-        </div>
-        <div id="div_nome">
-            
-        </div>
+<body>
+    <div class="funcoes">
+        <a href="home.html">
+            <img src="../assets/icons/seta esquerda.png" alt="">
+        </a>
     </div>
-    <div>
-        <div>
-            <h1>Mudar nome</h1>
-            <input id="inp_nome">
-        </div>
-        <div>
-            <h1>escolha a nova foto de perfil:</h1>
-            <div>
-                <a onclick="atualizar(1)">
-                    <img src="../assets/profile/palico1.png" >
-                </a>
-                <a onclick="atualizar(2)">
-                    <img src="../assets/profile/palico2.png" >
-                </a>
-                <a onclick="atualizar(3)">
-                    <img src="../assets/profile/palico3.png" >
-                </a>
-                <a onclick="atualizar(4)">
-                    <img src="../assets/profile/palico4.png" >
-                </a>
-                <a onclick="atualizar(5)">
-                    <img src="../assets/profile/palico5.png" >
-                </a>
+    <div class="global">
+
+        <div class="usuario">
+            <div id="usu_img">
+
+            </div>
+            <div id="div_nome">
 
             </div>
         </div>
         <div>
-            <button onclick="enviar()">Atualizar Alterações</button>
+            <div class="mudanca">
+                <div class="mudar_nome">
+                    <h1>Mudar nome</h1>
+                    <input id="inp_nome">
+                </div>
+                <div class="escolher_ft">
+                    <h1>escolha a nova foto de perfil</h1>
+                    <div>
+                        <a onclick="atualizar(1)">
+                            <img src="../assets/profile/palico1.png">
+                        </a>
+                        <a onclick="atualizar(2)">
+                            <img src="../assets/profile/palico2.png">
+                        </a>
+                        <a onclick="atualizar(3)">
+                            <img src="../assets/profile/palico3.png">
+                        </a>
+                        <a onclick="atualizar(4)">
+                            <img src="../assets/profile/palico4.png">
+                        </a>
+                        <a onclick="atualizar(5)">
+                            <img src="../assets/profile/palico5.png">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="confirm">
+                <button onclick="enviar()">Confirmar Alterações</button>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
 
 <script>
 
-    usu_img.innerHTML=`<img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" >`;
-    div_nome.innerHTML=`<h2>${sessionStorage.NOME_USUARIO}</h2>`;
-    inp_nome.value=`${sessionStorage.NOME_USUARIO}`;
+    usu_img.innerHTML = `<img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" >`;
+    div_nome.innerHTML = `<h2>${sessionStorage.NOME_USUARIO}</h2>`;
+    inp_nome.value = `${sessionStorage.NOME_USUARIO}`;
     var idUsu = sessionStorage.ID_USUARIO;
     var nova_foto = sessionStorage.IMG_USUARIO;
 
-    function atualizar(foto){
+    function atualizar(foto) {
         nova_foto = `palico${foto}`
-        sessionStorage.IMG_USUARIO = `palico${foto}`
+
     }
 
     function enviar() {
+        sessionStorage.IMG_USUARIO = nova_foto;
+        sessionStorage.NOME_USUARIO = inp_nome.value;
         fetch(`/avisos/atualizar/${sessionStorage.getItem("ID_USUARIO")}`, {
             method: "PUT",
             headers: {
@@ -77,7 +90,7 @@
         }).then(function (resposta) {
 
             if (resposta.ok) {
-                
+
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -88,5 +101,5 @@
         });
     }
 
-    
+
 </script>
