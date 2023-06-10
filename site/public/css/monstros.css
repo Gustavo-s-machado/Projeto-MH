@@ -122,3 +122,41 @@ body{
     text-decoration: none;
     color: white;
 }
+
+/* seleção de monstros */
+
+.selecao_monstros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.selecao_monstros div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sl_mn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.sl_mn div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sl_mn div a{
+    cursor: pointer;
+    width: 10%;
+}
+
+.sl_mn div img{
+    width: 100%;
+}
