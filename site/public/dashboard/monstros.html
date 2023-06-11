@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monstros</title>
     <link rel="stylesheet" href="../css/monstros.css">
+    <link rel="stylesheet" href="../css/global.css">
 </head>
 
 <body>
@@ -85,58 +86,479 @@
             "../assets/monsters icons/rathian_icon.png",
             "../assets/monsters icons/kuluyaku_icon.png",
             "../assets/monsters icons/legiana_icon.png",
-            "../assets/monsters icons/pukei_pukei_icon.png"]
+            "../assets/monsters icons/pukei_pukei_icon.png"],
+        nome_d: [
+            'Kirin',
+            'Kushala Daora',
+            'Nergigante',
+            'Teostra',
+            'Vaal Hazak',
+            'Velkhana'],
+        nome_c:[
+            'Odogaron',
+            'Rathalos',
+            'Rathian',
+            'Kulu ya ku',
+            'Legiana',
+            'Pukei Pukei']
     }
 
 
 
     for (var i = 0; i < monstros.dragoes.length; i++) {
 
-        div_dragao.innerHTML += `<a onclick="mostrar_dragao(${i})"><img src="${monstros.dragoes[i]}"></a>`
+        div_dragao.innerHTML += `<a onclick="mostrar_dragao(${i})"><img src="${monstros.dragoes[i]}">
+            <span>${monstros.nome_d[i]}</span>    
+        </a>`
     }
 
     for (var i = 0; i < monstros.comum.length; i++) {
-        div_comum.innerHTML += `<a onclick="mostrar_comum(${i})"><img src="${monstros.comum[i]}""></a>`
+        div_comum.innerHTML += `<a onclick="mostrar_comum(${i})"><img src="${monstros.comum[i]}"">
+            <span>${monstros.nome_c[i]}</span>     
+        </a>`
 
     }
 
     function mostrar_dragao(tipo) {
+        more_dragon.style.height="170vh"
+
         if (tipo == 0) {
             console.log(tipo)
             more_dragon.innerHTML=`
-                <img ><p>
-                    maconha1
+            <div>
+                <button onclick="fechar_mh('dragon')">
+                    <img src="../assets/icons/pra-cima.png"> 
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-kirin_render.png">
+                </div>
+                <div>
+                    <h1>Informações</h1>
+                    <p>
+                        Kirin se assemelha a um unicórnio, embora um olhar mais atento revele que ele tem um rosto de leão e é coberto de escamas, em vez de um casaco. Sua majestosa crina e cabelos brancos se arrepiam, como se carregados de estática. O monstro geralmente crepita com eletricidade perdida.
                     </p>
+                    <p>
+                        Kirin pode convocar um raio para atacar atacantes ou a área ao seu redor. Quando o Kirin é ameaçado ou provocado, ele pode se envolver em raios, o que comprovadamente endurece sua pele. Kirin tem muito poucos ataques físicos e depende principalmente de raios como sua principal força de ataque aos inimigos. Com extrema agilidade, Kirin pode literalmente correr em círculos ao redor de seu oponente, aproximando-se para atingir um inimigo com seu chifre, apenas para rapidamente se afastar e preparar outro ataque. Kirin é muito móvel e pode pular e correr distâncias incríveis em curtos períodos de tempo.
+                    </p>
+                </div>
+            </div>
+            <div class="armor">
+                <h2>Armaduras</h2>
+                <div>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/kirin_beta_armor_set_mhw_small.png">
+                    <span>Kirin amor set A</span>
+                    </p>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/kirin_alpha_armor_set_mhw_small.png">
+                    <span>Kirin amor set B</span>
+                    </p>
+                </div>
+            </div>
             `
+
         } else if (tipo == 1) {
             console.log(tipo)
+            more_dragon.innerHTML=`
+            <div>
+                <button onclick="fechar_mh('dragon')">
+                    <img src="../assets/icons/pra-cima.png"> 
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-kushala_daora_render_001.png">
+                </div>
+                <div>
+                    <h1>Informações</h1>
+                    <p>
+                        Kushala Daora é um dragão com pele metálica. Suas grandes asas se conectam na base de sua cauda, ​​fazendo com que pareçam ainda maiores em proporção ao seu corpo. Dois chifres curvados para trás ficam de cada lado de sua cabeça, misturando-se com os espinhos que revestem suas costas. Tem vento visível fluindo ao redor de seu corpo. Kushala tem um nariz ligeiramente avermelhado, possivelmente um sinal de ferrugem.
+                    </p>
+                    <p>
+                        Além de sua pele metálica que pode protegê-lo de ataques, Kushala Daora tem a capacidade de manipular o vento, permitindo-lhe disparar rajadas de ar comprimido, criar tornados maciços para sugar inimigos e causar violentas tempestades em sua vizinhança. Mais notoriamente, uma vez enfurecido, pode gerar uma barreira de vento que aumentará gradualmente em força à medida que se torna mais raivoso; a barreira gera pressão de vento suficiente para desviar de ataques não direcionados à sua cabeça ou cauda, ​​bem como repelir os caçadores, tornando-os vulneráveis ​​aos ataques de Kushala Daora. No entanto, essa barreira de vento pode ser enfraquecida ou totalmente negada se Kushala Daora for envenenado ou tiver seu chifre quebrado.
+                    </p>    
+                </div>
+            </div>
+            <div class="armor">
+                <h2>Armaduras</h2>
+                <div>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/kushala_beta_armor_set_mhw_small.png">
+                    <span>Kushala Daora amor set A</span>
+                    </p>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/kushala_armor_set_mhw_small.png">
+                    <span>Kushala Daora set B</span>
+                    </p>
+                </div>
+            </div>
+            `
         } else if (tipo == 2) {
             console.log(tipo)
+            more_dragon.innerHTML=`
+            <div>
+                <button onclick="fechar_mh('dragon')">
+                    <img src="../assets/icons/pra-cima.png"> 
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-nergigante_render_001.png">
+                </div>
+                <div>
+                    <h1>Informações</h1>
+                    <p>
+                        Nergigante é um dragão com uma aparência eriçada. Está coberto de espinhos que crescem constantemente à medida que são quebrados. Tem dois chifres maciços semelhantes a um touro. A pele do monstro é principalmente preta com detalhes em roxo e laranja. Nergigante está constantemente regenerando sua pele enquanto ataca e é atingido por caçadores. Crescerá lentamente pontas brancas em certas partes do corpo, que endurecem com o tempo. Os caçadores devem tentar quebrar as pontas brancas antes que endureçam. Uma vez endurecidos, seus ataques causam mais dano. Esses picos são de cor branca quando crescem novamente, mas ficarão pretos se deixados para endurecer. Uma vez que esses picos tenham endurecido, eles causarão mais dano aos inimigos e repelirão ataques.
+                    </p>
+                </div>
+            </div>
+            <div class="armor">
+                <h2>Armaduras</h2>
+                <div>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/nergigante_alpha_armor_set_mhw_small.png">
+                    <span>Nergigante amor set A</span>
+                    </p>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/nergigante_beta_armor_set_mhw_small.png">
+                    <span>Nergigante amor set B</span>
+                    </p>
+                </div>
+            </div>
+            `
         } else if (tipo == 3) {
             console.log(tipo)
+            more_dragon.innerHTML=`
+            <div>
+                <button onclick="fechar_mh('dragon')">
+                    <img src="../assets/icons/pra-cima.png"> 
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-teostra_render_001.png">
+                </div>
+                <div>
+                    <h1>Informações</h1>
+                    <p>
+                        Teostra é um grande dragão com características leoninas e uma coloração vermelha ardente. Ele tem uma grande juba, grandes presas e um par de chifres que se curvam para trás. Suas asas são cobertas de pelo, e sua cauda termina em um amontoado desse pelo. Ele é a contraparte masculina de Lunastra.
+                    </p>
+                    <p>
+                        Embora Teostra possua habilidades físicas excepcionais, seu principal perigo vem de suas profundas habilidades sobre chamas, permitindo-lhe exalar correntes de fogo extremamente poderosas para incinerar inimigos, incendiar seus arredores e gerar uma aura de calor tão intensa que pode queimar aqueles que o cercam. simplesmente abordá-lo. Juntamente com suas chamas, Teostra pode criar grandes quantidades de pó explosivo feito de suas próprias escamas, que pode detonar à vontade rangendo os dentes para criar faíscas. Ele pode espalhar esse pó cobrindo-se enquanto se move, ou pode inflamar todo o pó simultaneamente para produzir uma "Supernova" devastadora.
+                    </p>
+                </div>
+            </div>
+            <div class="armor">
+                <h2>Armaduras</h2>
+                <div>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/teostra-alpha-plus-set-mhw-wiki-guide.png">
+                    <span>Teostra amor set A</span>
+                    </p>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/teostra-beta-plus-set-mhw-wiki-guide.png">
+                    <span>Teostra amor set B</span>
+                    </p>
+                </div>
+            </div>
+            `
         } else if (tipo == 4) {
             console.log(tipo)
+            more_dragon.innerHTML=`
+            <div>
+                <button onclick="fechar_mh('dragon')">
+                    <img src="../assets/icons/pra-cima.png"> 
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-vaal_hazak_render_001.png">
+                </div>
+                <div>
+                    <h1>Informações</h1>
+                    <p>
+                        Vaal Hazak é um Elder Dragon longo e esguio com várias características físicas únicas. Seu corpo é coberto por escamas de prata, que são obscurecidas pelo véu carnudo vermelho que cobre a maior parte de seu corpo. Possui uma impressionante mandíbula inferior dupla, cada uma com uma fileira de presas extremamente longas e afiadas semelhantes às de um peixe de águas profundas. Ele tem duas manchas amarelas brilhantes nas laterais da cabeça e dois pequenos olhos vermelhos. Seus dedos e pontas das asas são adornados com garras em forma de foice. É semelhante em tamanho a outros Elder Dragons, como Teostra e Kushala Daora. A cabeça, o corpo e os braços de Vaal Hazak podem ser feridos. Sua cauda também pode ser cortada.
+                    </p>
+                </div>
+            </div>
+            <div class="armor">
+                <h2>Armaduras</h2>
+                <div>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/vaal_hazak_alpha_armor_set_mhw_small.png">
+                    <span>Vaal Hazak amor set A</span>
+                    </p>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/vaal_hazak_beta_armor_set_mhw_small.png">
+                    <span>Vaal Hazak amor set B</span>
+                    </p>
+                </div>
+            </div>
+            `
         } else if (tipo == 5) {
             console.log(tipo)
+            more_dragon.innerHTML=`
+            <div>
+                <button onclick="fechar_mh('dragon')">
+                    <img src="../assets/icons/pra-cima.png"> 
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhwi-velkhana_render_001.png">
+                </div>
+                <div>
+                    <h1>Informações</h1>
+                    <p>
+                        Velkhana é um dragão tradicional com a estrutura corporal esbelta e ereta de Elder Dragons como Kushala Daora. Suas escamas e concha são de um azul cristalino único. Sua cabeça tem uma coroa em forma de tiara de pequenos chifres. Ele invoca gelo para cobrir suas asas, membros e cauda. Sua cauda fina em forma de lança é altamente flexível e pode golpear os inimigos.
+                    </p>
+                    <p>
+                        Velkhana pode controlar o frio usando suas escamas infundidas com minério e pode usar isso de várias maneiras. Ele ataca principalmente os inimigos respirando fluido super-resfriado que irá congelar rapidamente no impacto, o que também permite criar paredes e explodir picos de gelo. Ele também pode usar isso para criar uma armaduras de gelo para se proteger e dispersar nuvens geladas que podem capturar os inimigos. Essas nuvens congelarão espontaneamente quando Velkhana as atingir com seus ataques de sopro, permitindo que chovam pedaços de gelo sobre seus inimigos. Velkhana também é altamente ágil e evasivo, manobrando rapidamente em torno de seus inimigos enquanto usa sua cauda flexível em forma de lança para atacar de vários ângulos. Notavelmente, se sua cauda for cortada durante a batalha, ela pode criar uma prótese usando seu gelo.
+                    </p>
+                </div>
+            </div>
+            <div class="armor">
+                <h2>Armaduras</h2>
+                <div>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/velkhana_alpha_plus_armor_set-mhw-wiki-guide.png">
+                    <span>Velkhana amor set A</span>
+                    </p>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/velkhana_beta_plus_armor_set-mhw-wiki-guide.png">
+                    <span>Velkhana amor set B</span>
+                    </p>
+                </div>
+            </div>
+            `
         };
     }
 
     function mostrar_comum(tipo) {
-        console.log(tipo);
+        more_comum.style.height="170vh"
 
         if (tipo == 0) {
+            console.log(tipo)
+            more_comum.innerHTML=`<div>
+                <button onclick="fechar_mh('normal')">
+                    <img src="../assets/icons/pra-cima.png">    
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-odogaron_render_001.png">
+                </div>
+                <div>
+                    <h1>Informações</h1>
+                    <p>
+                        Odogaron é quadrúpede, capaz de se mover em alta velocidade. É coberto por escamas vermelhas e saliências ósseas que se assemelham a tecido muscular e osso. A cauda é particularmente ossuda e pode ser usada como clava. A característica mais marcante de Odogaron é sua dupla fileira de garras, que usa para infligir feridas profundas em suas presas. Depois de comer, veias vermelhas brilharão em suas costas.
+                    </p>
+                    <p>
+                        Odogaron vasculha o Vale Rotten em busca de carniça. Sua natureza altamente agressiva significa que qualquer coisa, seja um monstro ou um homem, é uma refeição em potencial. Apesar de seu tamanho, Odogaron é um monstro bastante ágil. Ele é capaz de atacar a presa antes de dar mordidas com suas mandíbulas poderosas. O conjunto duplo de garras de Odogaron permite que ele deixe cortes profundos nas presas, fazendo-as sangrar até a morte. Odogaron às vezes pode ser visto arrastando cadáveres de volta ao seu covil.[1]. A cabeça e as garras dianteiras de Odogaron podem ser quebradas e sua cauda pode ser ferida e cortada.
+                    </p>
+                </div>
+            </div>
+            <div class="armor">
+                <h2>Armaduras</h2>
+                <div>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/odogaron_alpha_armor_set_mhw_small.png">
+                    <span>Odogaron amor set A</span>
+                    </p>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/odogaron_beta_armor_set_mhw_small.png">
+                    <span>Odogaron amor set B</span>
+                    </p>
+                </div>
+            </div>
+            `
+        }
+        else if (tipo == 1) {
+            console.log(tipo)
+            more_comum.innerHTML=`<div>
+                <button onclick="fechar_mh('normal')">
+                    <img src="../assets/icons/pra-cima.png">    
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-rathalos_render_001.png">
+                </div>
+                <div>
+                    <h1>Informações</h1>
+                    <p>
+                        Rathalos são grandes wyverns bípedes com uma pele blindada e espinhosa cobrindo seu corpo. Sua casca externa apresenta cores muito mais brilhantes e vibrantes do que a de sua contraparte feminina, a Rathian. É principalmente vermelho brilhante, com marcas pretas por toda parte. Como o Rathian, Rathalos possui um saco de chamas que é usado para produzir projéteis flamejantes mortais da boca. As garras em seus pés são altamente venenosas e são conhecidas por infligir feridas mortais tóxicas em presas maiores. Além disso, sua cauda longa e grossa apresenta uma pesada clava pontiaguda na ponta. As membranas das asas de Rathalos apresentam padrões ornamentados que provavelmente são usados ​​para atrair parceiros em potencial.
+                    </p>
+                    <p>
+                        Rathalos são voadores experientes e, como tal, são propensos a caçar dos céus. Ao lançar um ataque aéreo surpresa, eles podem infligir ferimentos venenosos com suas garras ou queimar presas com projéteis flamejantes. No chão, os Rathalos continuam sendo adversários formidáveis. Usando suas pernas poderosas, eles podem perseguir presas à distância ou infligir dano contundente com sua cauda. Em um alcance próximo o suficiente, eles são conhecidos por usar seus dentes afiados para morder os inimigos também. Alguns Rathalos são capazes de permanecer no ar e lançar "algumas" bolas de fogo antes de pousar de volta no chão.
+                    </p>
+                </div>
+            </div>
+            <div class="armor">
+                <h2>Armaduras</h2>
+                <div>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/rathalos_alpha_armor_set_mhw_small.png">
+                    <span>Rathaos amor set A</span>
+                    </p>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/rathalos_beta_armor_set_mhw_small.png">
+                    <span>Rathalos amor set B</span>
+                    </p>
+                </div>
+            </div>
+            `
+        } 
+        else if (tipo == 2) {
+            
+            more_comum.innerHTML=`<div>
+                <button onclick="fechar_mh('normal')">
+                    <img src="../assets/icons/pra-cima.png">    
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="../assets/background/MHW-Rathian_Render_001.webp">
+                </div>
+                <div>
+                    <h1>Informações</h1>
+                    <p>
+                        Rathian é um verdadeiro wyvern voador de tamanho médio, semelhante em aparência ao seu homólogo masculino, Rathalos. Sua pele é de um verde opaco e suave em contraste com o vermelho profundo do Rathalos, e sua mandíbula inferior apresenta um queixo longo e saliente. A parte superior das costas e as pontas das asas são cobertas por um pelo parecido com musgo, não visto no Rathalos, e enquanto sua cauda não possui pontas ósseas, compensa isso com a presença de agulhas afiadas e altamente venenosas, que ela pode usar para envenenar os inimigos. mediante contato.
+                    </p>
+                    <p>
+                        Rathian, como seu companheiro, pode gerar projéteis flamejantes de sua boca. Ela é notavelmente mais proficiente no uso desta arma, no entanto, como ela é comumente vista liberando várias explosões de uma só vez. Além disso, ela é capaz de carregar e liberar uma explosão de fogo mais potente que pode incendiar uma faixa de terreno à sua frente. Ela pode usar as farpas venenosas em sua clava de cauda para infligir feridas tóxicas e contundentes em inimigos, mesmo que sua cauda tenha sido cortada. Suas pernas poderosas permitem que ela corra em alta velocidade, tornando-a facilmente capaz de perseguir a maioria das presas. Como o Rathalos, sua visão é muito aguçada, então Flash Bombs são úteis em combate.
+                    </p>
+                </div>
+            </div>
+            <div class="armor">
+                <h2>Armaduras</h2>
+                <div>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/rathian_alpha_armor_set_mhw_small.png">
+                    <span>Rathian amor set A</span>
+                    </p>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/rathian_beta_armor_set_mhw_small.png">
+                    <span>Rathian amor set B</span>
+                    </p>
+                </div>
+            </div>
+            `
+        } 
+        else if (tipo == 3) {
 
-        } else if (tipo == 1) {
+            more_comum.innerHTML=`<div>
+                <button onclick="fechar_mh('normal')">
+                    <img src="../assets/icons/pra-cima.png">    
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-kulu-ya-ku_render_001.png">
+                </div>
+                <div>
+                    <h1>Informações</h1>
+                    <p>
+                        Kulu-Ya-Ku é capaz de pegar pequenas pedras e usá-las para se proteger de ataques recebidos. Ele também pode lançar as referidas pedras em inimigos à distância ou usar um golpe de salto para infligir atordoamento. Eles são comumente vistos roubando ovos de ninhos de monstros, especialmente os de Rathian. Usando Slinger Ammos, os caçadores podem facilmente derrubar pedras das mãos do Kulu-Ya-Ku. Os caçadores também podem quebrar a rocha acertando-a várias vezes com sua arma. A cabeça e os braços de Kulu-Ya-Ku podem ser feridos.
+                    </p>
+                </div>
+            </div>
+            <div class="armor">
+                <h2>Armaduras</h2>
+                <div>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/kulu_alpha_armor_set_mhw_small.png">
+                    <span>Kulu ya ku amor set A</span>
+                    </p>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/kulu_beta_armor_set_mhw_small.png">
+                    <span>Kulu ya ku amor set B</span>
+                    </p>
+                </div>
+            </div>
+            `
+        } 
+        else if (tipo == 4) {
 
-        } else if (tipo == 2) {
-
-        } else if (tipo == 3) {
-
-        } else if (tipo == 4) {
-
-        } else if (tipo == 5) {
-
+            more_comum.innerHTML=`<div>
+                <button onclick="fechar_mh('normal')">
+                    <img src="../assets/icons/pra-cima.png">    
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-legiana_render_001.png">
+                </div>
+                <div>
+                    <h1>Informações</h1>
+                    <p>
+                        Legiana é capaz de emitir um vento gelado de seu corpo, que embota a capacidade de fuga de sua presa. Ele voa com extrema precisão e agilidade, usando suas garras para agarrar sua presa no ar. Legiana às vezes luta contra Paolumu se os dois Flying Wyverns se encontrarem. Suas pernas são fortes o suficiente para lançar monstros de tamanho médio, como Paolumu, a distâncias consideráveis, uma vez que estão em seu alcance. Legiana foi observada comendo Raphinos, simplesmente agarrando um com suas garras e mordendo-o.
+                    </p>
+                </div>
+            </div>
+            <div class="armor">
+                <h2>Armaduras</h2>
+                <div>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/legiana_alpha_armor_set_mhw_small.png">
+                    <span>Legiana set A</span>
+                    </p>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/legiana_beta_armor_set_mhw_small.png">
+                    <span>Legiana amor set B</span>
+                    </p>
+                </div>
+            </div>
+            `
+        } 
+        else if (tipo == 5){
+            more_comum.innerHTML=`<div>
+                <button onclick="fechar_mh('normal')">
+                    <img src="../assets/icons/pra-cima.png">    
+                </button>
+            </div>
+            <div class="info">
+                <div>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-pukei-pukei_render_001.png">
+                </div>
+                <div>
+                    <h1>Informações</h1>
+                    <p>
+                        Pukei-Pukei lembra um pouco um camaleão, com uma capacidade limitada de mudança de cor, e seus olhos são semelhantes aos dos sapos. Ele tem um par de asas e é coberto por escamas verdes semelhantes a penas que variam em cor por todo o corpo, exceto o ventre, que é coberto por placas brancas semelhantes a osteodermos. Apesar de ser de natureza reptiliana, Pukei-Pukei tem penas vibrantes ao redor de seu pescoço e asas.
+                    </p>
+                    <p>
+                        Pukei-Pukei é conhecido por armazenar as propriedades de sua comida dentro de sua boca e cauda antes de combiná-las com seu próprio veneno. Ao fazer isso, ele pode expelir veneno de sua boca e cauda para proteção com vários efeitos, dependendo de sua refeição anterior. Por exemplo, se Pukei-Pukei comer um Scatternut, seu veneno ganhará uma habilidade atordoante. Os caçadores podem jogar Scatternuts em Pukei-Pukei para evitar que ele se alimente de nozes.
+                    </p>
+                </div>
+            </div>
+            <div class="armor">
+                <h2>Armaduras</h2>
+                <div>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/pukei_alpha_armor_set_mhw_small.png">
+                    <span>Pukei Pukei set A</span>
+                    </p>
+                    <p>
+                    <img src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/pukei_beta_armor_set_mhw_small.png">
+                    <span>Pukei Pukei amor set B</span>
+                    </p>
+                </div>
+            </div>
+            `
         };
+    }
+
+    function fechar_mh(qual){
+        if(qual == 'dragon'){
+            console.log('cafapjafoiawj')
+            more_dragon.style.height="0px"
+            more_dragon.innerHTML=""
+        }else if(qual == 'normal'){
+            more_comum.style.height="0px"
+            more_comum.innerHTML=""
+        }
     }
 
     a_profile.innerHTML = `<img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" >`

@@ -9,6 +9,7 @@
     <title>Home</title>
     <script src="../js/funcoes.js"></script>
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/global.css">
 </head>
 
 <body onload="validarSessao(), atualizacaoPeriodica()">
@@ -16,7 +17,7 @@
 
         <div class="menu" id="div_menu">
             <div id="div_usuario">
-                
+
             </div>
             <div id="div_options">
 
@@ -25,7 +26,7 @@
     </div>
 
     <div class="header">
-        <div class="navbar"> 
+        <div class="navbar">
             <div>
                 <img src="../assets/pngegg.png" class="logo">
             </div>
@@ -36,12 +37,12 @@
             </div>
             <div class="profile">
                 <a onclick="exibir()" id="a_profile">
-                    
+
                 </a>
             </div>
         </div>
     </div>
-    
+
     <div class="carrossel" id="carrossel">
         <img src="../assets/background/mhw1.jpg" alt="">
     </div>
@@ -93,43 +94,20 @@
         </div>
     </div>
 
-<!-- <div class="header-left dash-header">
-
-            <h1>AquaTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav">
-                <h3>Aquários</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div> -->
 
 
+</body>
 
-
-        
+</html>
 <script>
     a_profile.innerHTML = `<img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" >`
-    
+
     var posicao = 0;
 
     var imagens = [
-    "../assets/background/mhw1.jpg",
-    "../assets/background/mhw2.jpg",
-    "../assets/background/mhw3.jpg"
+        "../assets/background/mhw1.jpg",
+        "../assets/background/mhw2.jpg",
+        "../assets/background/mhw3.jpg"
     ];
 
 
@@ -140,7 +118,7 @@
     //     if(posicao <= imagens.length - 1){
 
     //         carrossel.innerHTML=`<img src="${imagens[posicao]}" alt="">`
-            
+
     //     }else if(posicao > imagens.length - 1){
     //         posicao = 0;
     //         carrossel.innerHTML=`<img src="${imagens[posicao]}" alt="">`
@@ -150,37 +128,32 @@
     //     ,
     //     3000
     // )
-    
-    function exibir(){
-        div_usuario.innerHTML =` 
+
+    function exibir() {
+        div_usuario.innerHTML = ` 
         <button onclick="fechar()">X</button>
         <div>
         <p id="nome_usuario">${sessionStorage.NOME_USUARIO}</p>
         <img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" alt="">
         </div>
-        `   
-        div_options.innerHTML=`
+        `
+        div_options.innerHTML = `
             <div>
-                <div>
-                    <a href="usuario.html">
-                        configurações do Perfil
-                    </a>
-                </div>
+                <a href="usuario.html">
+                    configurações do Perfil
+                </a>
             </div>
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
         `
 
-        div_menu.style.width="30%"
+        div_menu.style.width = "30%"
     }
 
-    function fechar(){
-        div_menu.style.width="0%"
+    function fechar() {
+        div_menu.style.width = "0%"
         div_usuario.innerHTML = ""
-        div_options.innerHTML=""
+        div_options.innerHTML = ""
     }
 </script>
-
-
-</html>
