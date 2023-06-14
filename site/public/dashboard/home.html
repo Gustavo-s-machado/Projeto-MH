@@ -52,9 +52,8 @@
             <h1>opções</h1>
         </div>
         <div>
-            <button>Monstros</button>
-            <button>noticias</button>
-            <button>Comunidade</button>
+            <button onclick="irpara(1)">Monstros</button>
+            <button onclick="irpara(2)">Comunidade</button>
         </div>
     </div>
 
@@ -121,6 +120,12 @@
 
 </html>
 <script>
+
+    function irpara(tela){
+        if(tela == 1){
+            window.location="/"
+        }
+    }
 
     if(sessionStorage.VOTO == "sim"){
         grafico.innerHTML=`<div id="grafico1">

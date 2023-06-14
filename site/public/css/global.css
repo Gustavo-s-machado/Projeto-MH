@@ -13,6 +13,30 @@
     src: url(../assets/font/Acme-Regular.ttf);
 }
 
+button{
+    background-color: black;
+    border: white 1px solid;
+    color: white;
+    padding-left: 2vh;
+    padding-top: 1vh;
+    padding-bottom:1vh ;
+    padding-right: 2vh;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+input{
+    border-radius: 2vh;
+    border: none;
+    padding: 1vh;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
+
 body::-webkit-scrollbar {
     width: 12px;
     /* width of the entire scrollbar */
