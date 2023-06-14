@@ -6,77 +6,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Avisos</title>
+    <title>Comunidade</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="./dashboards.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/comunidade.css">
     <script src="../js/funcoes.js"></script>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
-    <!-- <body onload="validarSessao()"> -->
+<body onload="validarSessao(), atualizarFeed()">
+    <div class="box">
+
+        <div class="menu" id="div_menu">
+            <div id="div_usuario">
+
+            </div>
+            <div id="div_options">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="navbar">
+            <div>
+                <a href="home.html">
+                    <img src="../assets/pngegg.png" class="logo">
+                </a>
+            </div>
+            <div class="lista">
+                <a href="monstros.html">Monstros</a>
+                <a href="mural.html" class="agora">Comunidade</a>
+            </div>
+            <div class="profile">
+                <a onclick="abrir()" id="a_profile">
+
+                </a>
+            </div>
+        </div>
+    </div>
 
     <div class="janela">
 
 
-        <div class="header-left">
-
-            <h1>AquaTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-                <h3>Mural de Avisos</h3>
-            </div>
-
-            <!-- <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-            </div> -->
-
-        </div>
 
         <div class="dash-right">
 
             <div class="avisos">
                 <div class="container">
-                    <h1>Publicar um aviso</h1>
+                    
                     <div class="div-form">
                         <form id="form_postagem" method="post" onsubmit="return publicar()">
                             <label>
-                                Título:
-                                <br>
+                                Tema   
                                 <input name="titulo" id="titulo" maxlength="100" type="text">
                             </label>
                             <br>
                             <label>
-                                Descrição (máximo de 250 caracteres):
-                                <br>
+                                Assunto (máximo de 250 caracteres)
                                 <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
                             </label>
                             <br>
                             <button>Enviar</button>
                         </form>
                     </div>
-                    <h1>Mural de Avisos</h1>
+                    <h1>Publicações da comunidade</h1>
                     <div class="div-results">
                         <div id="feed_container" class="feed-container">
                         </div>
@@ -88,7 +81,18 @@
         </div>
     </div>
 
+    <div class="footer">
+        <div>Feito com amor por um aluno spTech</div>
+        <div>
+            <a href="https://instagram.com/gulcia_?igshid=MjEwN2IyYWYwYw==">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1200px-Instagram-Icon.png">
+            </a>
 
+            <a href="https://github.com/Gustavo-s-machado">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+            </a>
+        </div>
+    </div>
 
 
 </body>
@@ -96,8 +100,41 @@
 </html>
 
 <script>
-    
-    // b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    // navbar
+
+
+    a_profile.innerHTML = `<img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" >`
+
+    function abrir() {
+        div_usuario.innerHTML = ` 
+    <button onclick="fechar()">X</button>
+    <div>
+    <p id="nome_usuario">${sessionStorage.NOME_USUARIO}</p>
+    <img src="../assets/profile/${sessionStorage.IMG_USUARIO}.png" alt="">
+    </div>
+    `
+        div_options.innerHTML = `
+        <div>
+            <a href="usuario.html">
+                configurações do Perfil
+            </a>
+        </div>
+        <div class="btn-logout" onclick="limparSessao()">
+            <h3>Sair</h3>
+        </div>
+    `
+
+        div_menu.style.width = "30%"
+    }
+
+    function fechar() {
+        div_menu.style.width = "0%"
+        div_usuario.innerHTML = ""
+        div_options.innerHTML = ""
+    }
+
+    // api
 
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
@@ -192,45 +229,27 @@
 
                         // criando e manipulando elementos do HTML via JavaScript
                         var divPublicacao = document.createElement("div");
-                        var spanID = document.createElement("span");
-                        var spanTitulo = document.createElement("span");
                         var spanNome = document.createElement("span");
                         var divDescricao = document.createElement("div");
-                        var divButtons = document.createElement("div");
-                        var btnEditar = document.createElement("button");
-                        var btnDeletar = document.createElement("button");
 
+                        spanNome.innerHTML = `<img src="../assets/profile/${publicacao.foto}.png"> <b>  ${publicacao.nome}  </b>`;
+                        divDescricao.innerHTML = `
+                        <div>
+                            Tema: <b>${publicacao.titulo}</b>
+                        </div>
+                        <br>
+                        <div>
+                            Assunto: <b>${publicacao.descricao}</b>
+                        </div>`
 
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
-                        spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
-                        divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
-                        btnEditar.innerHTML = "Editar";
-                        btnDeletar.innerHTML = "Deletar";
 
                         divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
                         spanNome.className = "publicacao-nome";
-                        spanTitulo.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";
 
-                        divButtons.className = "div-buttons"
 
-                        btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
-
-                        btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
-
-                        divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
-                        divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(divDescricao);
-                        divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
-                        divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }
 

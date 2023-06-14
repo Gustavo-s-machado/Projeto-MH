@@ -1,12 +1,4 @@
-@font-face {
-    font-family: mh1;
-    src: url(../assets/font/MonsterHunter.ttf);
-}
 
-@font-face {
-    font-family: mh2;
-    src: url(../assets/font/Quest_Clear.ttf);
-}
 
 body{
     margin: 0;
@@ -69,8 +61,6 @@ body{
 }
 
 .header .navbar .lista button:hover{
-
-    /* transform: scale(1.1); */
     background-color: white;
     color: black;
 }
@@ -93,6 +83,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 50%;
 }
 
@@ -115,11 +106,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
 }
 
 .sobre div h1{
     color: white;
+}
+
+.sobre div p{
+    width: 80%;
 }
 
 .sobre div img {
@@ -137,6 +133,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.tema div p{
+    width: 80%;
 }
 
 .tema div h1{
@@ -201,3 +202,22 @@ body{
 .carrossel .container img{
     width: 28%;
 }
+
+.title_carrossel{
+    margin-top: 20vh;
+    text-align: center;
+}
+
+.video{
+    margin-top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.video a{
+    text-decoration: none;
+    color: rgb(58, 166, 255);
+}
+

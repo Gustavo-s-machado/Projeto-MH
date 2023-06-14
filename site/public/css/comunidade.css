@@ -1,0 +1,58 @@
+.div-form {
+    display: flex;
+    justify-content: center;
+}
+
+.div-form #form_postagem{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.div-form #form_postagem label{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.div-form input{
+    border-radius: 5vh;
+}
+
+.div-form textarea{
+    border-radius: 2vh;
+}
+
+h1{
+    text-align: center;
+}
+
+.publicacao{
+    width: 90%;
+    display: flex;
+    border-radius: 5vh;
+    background-color: rgb(39, 39, 39);
+    border: 2vh black solid;
+    padding: 5vh;
+}
+
+.publicacao .publicacao-nome{
+    text-align: center;
+    width: 10%;
+}
+
+.publicacao .publicacao-nome img{
+    width: 100%;
+    border-radius: 100%;
+    margin-right: 2vh;
+}
+
+.publicacao .publicacao-descricao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+

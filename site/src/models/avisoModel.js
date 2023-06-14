@@ -11,10 +11,11 @@ function listar() {
             u.id AS idUsuario,
             u.nome,
             u.email,
-            u.senha
+            u.senha,
+            u.foto
         FROM aviso a
             INNER JOIN usuario u
-                ON a.fk_usuario = u.id;
+                ON a.fk_usuario = u.id order by a.id desc;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -31,7 +32,8 @@ function pesquisarDescricao(texto) {
             u.id AS idUsuario,
             u.nome,
             u.email,
-            u.senha
+            u.senha,
+            u.foto
         FROM aviso a
             INNER JOIN usuario u
                 ON a.fk_usuario = u.id
@@ -52,7 +54,8 @@ function listarPorUsuario(idUsuario) {
             u.id AS idUsuario,
             u.nome,
             u.email,
-            u.senha
+            u.senha,
+            u.foto
         FROM aviso a
             INNER JOIN usuario u
                 ON a.fk_usuario = u.id

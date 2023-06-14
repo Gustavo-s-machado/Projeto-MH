@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/global.css">
 </head>
 
 <body>
@@ -16,7 +17,6 @@
                 <img src="assets/pngegg.png" alt="">
             </div>
             <div class="lista">
-                <a href="">Sobre</a>
                 <a href="login.html">Login</a>
                 <button onclick="cadastro()">cadastro</button>
             </div>
@@ -24,14 +24,14 @@
     </div>
 
     <div class="produto">
-        
+
     </div>
 
     <div class="bemVindo">
 
         <div>
             <h1>Bem vindo(a)!!</h1>
-
+            <p>Seja muito bem vindo(a) ao meu site sobre monster hunter world!!!</p>
         </div>
 
         <div>
@@ -47,6 +47,10 @@
             <h1>
                 sobre mim
             </h1>
+            <p>
+                Me chamo Gustavo Dos Santos Machado, sou um estudante de analize e desenvolvimento de sistema da
+                faculdade SPTech, tenho 18 anos e esse projeto serve para demonstrar minhas habilidades com HTML, CSS e JS, me esforçei muito para desenvolver esse site espero que gostem!!
+            </p>
         </div>
     </div>
 
@@ -55,21 +59,57 @@
             <h1>
                 Monster hunter
             </h1>
+            <p>
+                A franquia Monster Hunter é uma série de jogos de fantasia desenvolvida e publicada pela Capcom, que se
+                iniciou com o jogo de mesmo nome para Playstation 2. Como o título sugere, o jogador assume o papel de
+                um caçador em um ambiente de fantasia e completa missões que consistem em buscar monstros para caçar ou
+                capturar, há uma grande variedade de monstros, e muita ação baseadas em combate de curta e longa
+                distância em tempo real.
+
+                A série se ramificou em jogos de Playstation Portable e um massively multiplayer online game. No Japão,
+                a série Monster Hunter é imensamente popular, com a versão Monster Hunter Freedom (conhecido no Japão
+                como Monster Hunter Portable) e suas sequências, Monster Hunter Freedom 2/Monster Hunter Portable 2 e
+                Monster Hunter Freedom Unite/Monster Hunter Portable 2G vendendo milhões de cópias, e Monster Hunter Tri
+                se tornando o mais vendido jogo de terceiros para Wii no Japão
+            </p>
         </div>
         <div>
             <img src="assets/background/fatalis.png" alt="">
         </div>
     </div>
+
+    <div class="title_carrossel">
+        <h1>confira imgens do jogo</h1>
+    </div>
+
     <div class="carrossel">
+        <button class="bt1" onclick="voltar()">< </button>
+        <button class="bt2" onclick="passar()">></button>
 
-        <button class="bt1" onclick="voltar()"><</button>
-                <button class="bt2" onclick="passar()">></button>
+        <div class="container" id="div_carrossel">
+            <img src="assets/imgs/print6.webp" id="img1">
+            <img src="assets/imgs/print1.jpeg" id="img2">
+            <img src="assets/imgs/print2.webp" id="img3">
+        </div>
+    </div>
 
-                <div class="container" id="div_carrossel">
-                    <img src="assets/imgs/print6.webp" id="img1">
-                    <img src="assets/imgs/print1.jpeg" id="img2" />
-                    <img src="assets/imgs/print2.webp" id="img3" />
-                </div>
+    <div class="video">
+        <h1>Aqui temos um video de gameplay do jogo.</h1>
+        <h4>Creditos ao <a href="https://www.youtube.com/@TeamDarkside">Team Darkside</a></h4>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OE0Lpy-ddxU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div class="footer">
+        <div>Feito com amor por um aluno spTech</div>
+        <div>
+            <a href="https://instagram.com/gulcia_?igshid=MjEwN2IyYWYwYw==">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1200px-Instagram-Icon.png">
+            </a>
+
+            <a href="https://github.com/Gustavo-s-machado">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+            </a>
+        </div>
     </div>
 </body>
 
@@ -88,20 +128,20 @@
 
     function passar() {
         posicao++
-        
-        if(posicao == imagens.length -1){
+
+        if (posicao == imagens.length - 1) {
             div_carrossel.innerHTML = `
                 <img src="${imagens[posicao - 1]}" id="img1" />
                 <img src="${imagens[posicao]}" id="img2" />
                 <img src="${imagens[0]}" id="img3" />
             `
-        }else if (posicao < imagens.length) {
+        } else if (posicao < imagens.length) {
             div_carrossel.innerHTML = `
                 <img src="${imagens[posicao - 1]}" id="img1" />
                 <img src="${imagens[posicao]}" id="img2" />
                 <img src="${imagens[posicao + 1]}" id="img3" />
             `
-        }else {
+        } else {
             posicao = 0;
             div_carrossel.innerHTML = `
                 <img src="${imagens[imagens.length - 1]}" id="img1">
@@ -115,21 +155,21 @@
 
     function voltar() {
         posicao--
-        
-        if(posicao == 0){
+
+        if (posicao == 0) {
             div_carrossel.innerHTML = `
                 <img src="${imagens[imagens.length - 1]}" id="img1" />
                 <img src="${imagens[posicao]}" id="img2" />
                 <img src="${imagens[posicao + 1]}" id="img3" />
             `
-        }else if(posicao < 0){
+        } else if (posicao < 0) {
             posicao = imagens.length - 1;
             div_carrossel.innerHTML = `
                 <img src="${imagens[posicao - 1]}" id="img1" />
                 <img src="${imagens[posicao]}" id="img2" />
                 <img src="${imagens[0]}" id="img3" />
             `
-        }else if (posicao < imagens.length) {
+        } else if (posicao < imagens.length) {
             div_carrossel.innerHTML = `
                 <img src="${imagens[posicao - 1]}" id="img1" />
                 <img src="${imagens[posicao]}" id="img2" />
